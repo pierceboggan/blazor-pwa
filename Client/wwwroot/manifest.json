@@ -1,6 +1,6 @@
 {
-  "name": "MyBlazorApp",
-  "short_name": "MyBlazorApp",
+  "name": "Blazor for Teams",
+  "short_name": "Blazor for Teams",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",
