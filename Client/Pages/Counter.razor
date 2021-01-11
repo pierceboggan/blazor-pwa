@@ -1,4 +1,5 @@
 ﻿@page "/counter"
+@inject IJSRuntime JS;
 
 <h1>Counter</h1>
 
@@ -6,11 +7,27 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-@code {
-    private int currentCount = 0;
+<button class="btn btn-primary" @onclick="FetchTeamsContext">FetchTeamsContext</button>
 
-    private void IncrementCount()
-    {
-        currentCount++;
+<p class="mt-2" style="font-size:1.6em">
+   @username
+</p>
+
+    @code {
+        private int currentCount = 0;
+
+        private void IncrementCount()
+        {
+            currentCount++;
+        }
+
+        private string username = "";
+
+        private async void FetchTeamsContext()
+        {
+            // Initialize Microsoft Teams SDK
+            await JS.InvokeAsync<string>("Teams.init");
+
+            username = await JS.InvokeAsync<string>("Teams.getUsername");
+        }
     }
-}
