@@ -29,5 +29,7 @@
             await JS.InvokeAsync<string>("Teams.init");
 
             username = await JS.InvokeAsync<string>("Teams.getUsername");
+
+            Console.WriteLine("Hi again!");
         }
     }
