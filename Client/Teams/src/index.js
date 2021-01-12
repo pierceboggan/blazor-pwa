@@ -1,18 +1,20 @@
 ﻿import * as microsoftTeams from "@microsoft/teams-js";
 
 export function initializeTeamsSdk() {
-    alert("hi");
+    alert("Hello from JavaScript!");
+
+    // Initialize Teams Client SDK
     microsoftTeams.initialize();
-    alert("hi again");
     microsoftTeams.getContext((context) => {
         alert(context.userPrincipalName);
     });
-    alert("hi again again");
 }
 
 export function getUsername() {
-    alert("hi2");
+    alert("Hello from JavaScript again!");
+
+    // Get user email
     microsoftTeams.getContext((context) => {
-        alert(context.userPrincipalName);
+        return context.userPrincipalName;
     });
 }
