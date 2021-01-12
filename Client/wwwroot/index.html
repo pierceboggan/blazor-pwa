@@ -3,18 +3,21 @@
 
 <head>
     <script>
-        window.initializeTeamsSdk = () => {
+        window.helloWorld = async () => {
             alert("hi");
-            microsoftTeams.initialize(window);
-            alert("hi again");
-        }
-
-        window.getUsername = () => {
-            alert("hi2");
-            microsoftTeams.getContext((context, error) => {
-                alert(Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "");
-                return Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "";
-            });
+            let microsoftTeams = await import('https://statics.teams.microsoft.com/sdk/v1.5.2/js/MicrosoftTeams.min.js');
+            alert("hi4");
+            if (microsoftTeams) {
+                microsoftTeams.initialize(window);
+                alert("hi again");
+                alert("hi2");
+                microsoftTeams.getContext((context, error) => {
+                    alert(Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "");
+                    return Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "";
+                });
+            } else {
+                alert("lol");
+            }
         }
     </script>
     <script src="https://statics.teams.microsoft.com/sdk/v1.5.2/js/MicrosoftTeams.min.js" crossorigin="anonymous"></script>

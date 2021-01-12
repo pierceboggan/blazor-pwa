@@ -26,9 +26,7 @@
         private async void FetchTeamsContext()
         {
             // Initialize Microsoft Teams SDK
-            await JS.InvokeVoidAsync("initializeTeamsSdk");
-
-            username = await JS.InvokeAsync<string>("getUsername");
+            await JS.InvokeVoidAsync("helloWorld");
 
             Console.WriteLine("Hi again!");
         }
