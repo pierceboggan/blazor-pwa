@@ -1,7 +1,35 @@
 ﻿@page "/"
+@inject IJSRuntime JS;
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+<button class="btn btn-primary" @onclick="GetUsername">Get My Username</button>
+
+<br />
+
+<p class="mt-2" style="font-size:1.6em">
+    @username
+</p>
+
+@code {
+    string username = "My user name is...";
+
+    private async void GetUsername()
+    {
+        try
+        {
+            // Initialize Microsoft Teams SDK
+            await JS.InvokeVoidAsync("Teams.initializeTeamsSdk");
+
+            // Get username from Teams SDK
+            var user = await JS.InvokeAsync<string>("Teams.getUsername");
+            username = "My username is... " + user;
+        }
+        catch (Exception ex)
+        {
+            username = ex.Message.ToString();
+        }
+    }
+}
