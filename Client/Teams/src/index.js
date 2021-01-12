@@ -1,12 +1,17 @@
-﻿import * as microsoftTeams from "https://statics.teams.microsoft.com/sdk/v1.5.2/js/MicrosoftTeams.min.js";
+﻿import * as microsoftTeams from "@microsoft/teams-js";
 
-window.initializeTeamsSdk = () => {
+export function initializeTeamsSdk() {
     alert("hi");
-    microsoftTeams.initialize(window);
+    microsoftTeams.initialize();
     alert("hi again");
+    microsoftTeams.getContext((context, error) => {
+    alert(Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "");
+    return Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "";
+    });
+    alert("hi again again");
 }
 
-window.getUsername = () => {
+export function getUsername() {
     alert("hi2");
     microsoftTeams.getContext((context, error) => {
         alert(Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "");

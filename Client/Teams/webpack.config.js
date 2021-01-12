@@ -13,8 +13,8 @@ module.exports = {
         ]
     },
     output: {
-        path: path.resolve(__dirname, '../wwwroot/js'),
-        filename: "index.js",
+        path: path.resolve(__dirname, '../wwwroot/'),
+        filename: "teams.js",
         library: "Teams"
     }
 };
