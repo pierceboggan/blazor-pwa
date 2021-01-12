@@ -21,14 +21,14 @@
             currentCount++;
         }
 
-        private string username = "";
+        private string username = "Hello";
 
         private async void FetchTeamsContext()
         {
             // Initialize Microsoft Teams SDK
-            await JS.InvokeAsync<string>("Teams.init");
+            await JS.InvokeVoidAsync("initializeTeamsSdk");
 
-            username = await JS.InvokeAsync<string>("Teams.getUsername");
+            username = await JS.InvokeAsync<string>("getUsername");
 
             Console.WriteLine("Hi again!");
         }

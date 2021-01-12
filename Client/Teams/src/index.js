@@ -1,4 +1,4 @@
-﻿import * as microsoftTeams from "@microsoft/teams-js";
+﻿import * as microsoftTeams from "https://statics.teams.microsoft.com/sdk/v1.5.2/js/MicrosoftTeams.min.js";
 
 export function init() {
     alert("hi");

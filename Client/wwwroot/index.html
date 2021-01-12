@@ -2,6 +2,22 @@
 <html>
 
 <head>
+    <script>
+        window.initializeTeamsSdk = () => {
+            alert("hi");
+            microsoftTeams.initialize(window);
+            alert("hi again");
+        }
+
+        window.getUsername = () => {
+            alert("hi2");
+            microsoftTeams.getContext((context, error) => {
+                alert(Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "");
+                return Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "";
+            });
+        }
+    </script>
+    <script src="https://statics.teams.microsoft.com/sdk/v1.5.2/js/MicrosoftTeams.min.js" crossorigin="anonymous"></script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Blazor in Teams</title>
@@ -10,8 +26,7 @@
     <link href="css/app.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/11.0.0/css/fabric.min.css" />
     <link rel="stylesheet" href="Client.styles.css" />
-    <script src="_content/BlazorFluentUI.BFUBaseComponent/blazorFluentUi.min.js"></script>
-    <script src="js/index.js"></script>
+    <script src="https://statics.teams.microsoft.com/sdk/v1.5.2/js/MicrosoftTeams.min.js" crossorigin="anonymous"></script>
     <link href="manifest.json" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
 </head>
