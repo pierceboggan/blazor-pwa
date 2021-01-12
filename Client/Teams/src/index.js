@@ -4,17 +4,17 @@ export function initializeTeamsSdk() {
     alert("hi");
     microsoftTeams.initialize();
     alert("hi again");
-    microsoftTeams.getContext((context, error) => {
-    alert(Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "");
-    return Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "";
+    microsoftTeams.getContext((context) => {
+        let userId = document.getElementById('user');
+        alert(context.userPrincipalName);
     });
     alert("hi again again");
 }
 
 export function getUsername() {
     alert("hi2");
-    microsoftTeams.getContext((context, error) => {
-        alert(Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "");
-        return Object.keys(this.state.context).length > 0 ? this.state.context['upn'] : "";
+    microsoftTeams.getContext((context) => {
+        let userId = document.getElementById('user');
+        alert(context.userPrincipalName);
     });
 }
