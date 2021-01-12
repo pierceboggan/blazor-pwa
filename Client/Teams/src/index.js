@@ -5,7 +5,6 @@ export function initializeTeamsSdk() {
     microsoftTeams.initialize();
     alert("hi again");
     microsoftTeams.getContext((context) => {
-        let userId = document.getElementById('user');
         alert(context.userPrincipalName);
     });
     alert("hi again again");
@@ -14,7 +13,6 @@ export function initializeTeamsSdk() {
 export function getUsername() {
     alert("hi2");
     microsoftTeams.getContext((context) => {
-        let userId = document.getElementById('user');
         alert(context.userPrincipalName);
     });
 }
